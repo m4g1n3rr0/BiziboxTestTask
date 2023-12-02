@@ -16,5 +16,50 @@ public class PersonsNumbers {
 	private String time;
 	private String incOut;
 	private String duration;
+	
+	public PersonsNumbers() {}
+	
+	public long getPhoneNumber() {
+		
+		return phoneNumber;
+	
+	}
+	
+	public String getTime() {
+	
+		return time;
+	
+	}
+	
+	public void setTime(String time) {
+	
+		this.time = time;
+	
+	}
+	
+	public String getIncOut() {
+	
+		return incOut;
+	
+	}
+	
+	public void setIncOut(String incOut) {
+	
+		this.incOut = incOut;
+	
+	}
+	
+	public String getDuration() {
+	
+		return duration;
+	
+	}
+	
+	public void setDuration(String duration) {
+	
+		this.duration = duration;
+	
+	}
+	
 
 }
