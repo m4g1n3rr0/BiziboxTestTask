@@ -50,7 +50,7 @@ public class Controller {
 		
 	}
 	
-	@GetMapping
+	@GetMapping("/user")
 	public ResponseEntity getOneUser(@RequestParam Long PhoneNumber) {
 	
 		try {

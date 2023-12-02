@@ -16,7 +16,7 @@ public class PhNumService {
 	
 	public PersonsNumbers registration(PersonsNumbers phoneNumber) throws PhoneInfoAlreadyExists {
       
-		if (callRepo.findByPhNumber(phoneNumber.getPhoneNumber()) != null) {
+		if (callRepo.findByPhoneNumber(phoneNumber.getPhoneNumber()) != null) {
       
 			throw new PhoneInfoAlreadyExists("Info about this call is already exists");
     
