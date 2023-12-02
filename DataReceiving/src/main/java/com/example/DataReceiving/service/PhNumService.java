@@ -83,11 +83,13 @@ public class PhNumService {
     }
 	
 	public void addCall(Call call) {
-        Call person = call.getPerson();
+        
+		Call person = call.getPerson();
 
         if (person != null && !person.isBlacklist()) {
             callRepo.save(call);
         }
-    }
+    
+	}
     
 }
