@@ -36,7 +36,7 @@ public class Controller {
 	}
 	
 	@GetMapping("/user")
-	public ResponseEntity getOneUser(@RequestParam Long PhoneNumber) {
+	public ResponseEntity getOneUser(@RequestParam String PhoneNumber) {
 	
 		try {
 			
@@ -52,7 +52,7 @@ public class Controller {
 	}
 	
 	@GetMapping
-	public ResponseEntity getUsers(@RequestParam Long PhoneNumber) {
+	public ResponseEntity getUsers(@RequestParam String PhoneNumber) {
 	
 		try {
 			
@@ -68,9 +68,11 @@ public class Controller {
 	}
 	
 	@DeleteMapping("/{id}")
-    public ResponseEntity deleteUser(@PathVariable Long PhoneNumber) {
-        try {
+    public ResponseEntity deleteUser(@PathVariable String PhoneNumber) {
+       
+		try {
             
+        	phNum.delete(PhoneNumber);
         	return ResponseEntity.ok(phNum.delete(PhoneNumber));
        
         } catch (Exception e) {

@@ -12,14 +12,14 @@ import jakarta.persistence.*;
 public class PersonsNumbers {
 	
 	@Id
-	private long phoneNumber;
+	private String phoneNumber;
 	private String time;
-	private String incOut;
+	private String callType;
 	private String duration;
 	
 	public PersonsNumbers() {}
 	
-	public long getPhoneNumber() {
+	public String getPhoneNumber() {
 		
 		return phoneNumber;
 	
@@ -37,15 +37,15 @@ public class PersonsNumbers {
 	
 	}
 	
-	public String getIncOut() {
+	public String getCallTypet() {
 	
-		return incOut;
+		return callType;
 	
 	}
 	
 	public void setIncOut(String incOut) {
 	
-		this.incOut = incOut;
+		this.callType = incOut;
 	
 	}
 	

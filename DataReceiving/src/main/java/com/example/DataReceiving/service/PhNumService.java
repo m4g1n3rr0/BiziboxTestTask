@@ -27,7 +27,7 @@ public class PhNumService {
 	}
 	
 	
-	public PersonsNumbers getOne(Long phoneNumber) throws PhoneCallNotFoundException {
+	public PersonsNumbers getOne(String phoneNumber) throws PhoneCallNotFoundException {
        
 		PersonsNumbers user = callRepo.findById(phoneNumber).orElse(null);
        
@@ -42,7 +42,7 @@ public class PhNumService {
 	}
 
 	
-	public PersonsNumbers getMany(Long phoneNumber) throws PhoneCallNotFoundException {
+	public PersonsNumbers getMany(String phoneNumber) throws PhoneCallNotFoundException {
         
 		PersonsNumbers user = callRepo.findById(phoneNumber).orElse(null);
        
@@ -56,9 +56,11 @@ public class PhNumService {
     
 	}
 
-    public Long delete(Long phoneNumber) {
-        callRepo.deleteById(phoneNumber);
-        return phoneNumber;
+    public String delete(String phoneNumber) {
+       
+    	callRepo.deleteById(phoneNumber);
+		return phoneNumber;
+    
     }
     
 }

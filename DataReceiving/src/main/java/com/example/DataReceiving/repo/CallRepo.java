@@ -5,8 +5,8 @@ import org.springframework.data.repository.*;
 
 import com.example.DataReceiving.model.PersonsNumbers;
 
-public interface CallRepo extends JpaRepository<PersonsNumbers, Long> {
+public interface CallRepo extends JpaRepository<PersonsNumbers, String> {
     
-	PersonsNumbers findByPhoneNumber(long phoneNumber);
+	PersonsNumbers findByPhoneNumber(String string);
 
 }
