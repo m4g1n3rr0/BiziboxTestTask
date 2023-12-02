@@ -8,7 +8,7 @@ import com.example.DataReceiving.model.PersonsNumbers;
 import com.example.DataReceiving.repo.CallRepo;
 
 @RestController
-@RequestMapping("/PhineBook")
+@RequestMapping("/PhoneBook")
 public class Controller {
 	
 	@Autowired
