@@ -56,9 +56,9 @@ public class PhNumService {
     
 	}
 
-    /*public Long delete(Long phoneNumber) {
-        CallRepo.deleteByPhoneNumber(phoneNumber);
+    public Long delete(Long phoneNumber) {
+        callRepo.deleteById(phoneNumber);
         return phoneNumber;
-    }*/
+    }
     
 }

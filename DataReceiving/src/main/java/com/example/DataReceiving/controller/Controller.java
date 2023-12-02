@@ -67,4 +67,18 @@ public class Controller {
 		
 	}
 	
+	@DeleteMapping("/{id}")
+    public ResponseEntity deleteUser(@PathVariable Long PhoneNumber) {
+        try {
+            
+        	return ResponseEntity.ok(phNum.delete(PhoneNumber));
+       
+        } catch (Exception e) {
+         
+        	return ResponseEntity.badRequest().body("Произошла ошибка");
+        
+        }
+    
+	}
+	
 }
