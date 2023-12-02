@@ -77,7 +77,7 @@ public class Controller {
        
         } catch (Exception e) {
          
-        	return ResponseEntity.badRequest().body("Произошла ошибка");
+        	return ResponseEntity.badRequest().body("Error was happened");
         
         }
     

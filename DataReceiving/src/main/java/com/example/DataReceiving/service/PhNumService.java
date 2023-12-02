@@ -1,5 +1,7 @@
 package com.example.DataReceiving.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
@@ -29,30 +31,30 @@ public class PhNumService {
 	
 	public PersonsNumbers getOne(String phoneNumber) throws PhoneCallNotFoundException {
        
-		PersonsNumbers user = callRepo.findById(phoneNumber).orElse(null);
+		PersonsNumbers preson = callRepo.findById(phoneNumber).orElse(null);
        
-		if (user == null) {
+		if (preson == null) {
        
 			throw new PhoneCallNotFoundException("User not found");
        
 		}
        
-		return user;
+		return preson;
     
 	}
 
 	
 	public PersonsNumbers getMany(String phoneNumber) throws PhoneCallNotFoundException {
         
-		PersonsNumbers user = callRepo.findById(phoneNumber).orElse(null);
+		PersonsNumbers preson = callRepo.findById(phoneNumber).orElse(null);
        
-		if (user == null) {
+		if (preson == null) {
        
 			throw new PhoneCallNotFoundException("User not found");
        
 		}
        
-		return user;
+		return preson;
     
 	}
 
@@ -61,6 +63,21 @@ public class PhNumService {
     	callRepo.deleteById(phoneNumber);
 		return phoneNumber;
     
+    }
+    
+    
+	public List<PersonsNumbers> findByTalkDurationGreaterThan(String duration) throws PhoneCallNotFoundException {
+    	
+    	List<PersonsNumbers> persons = callRepo.findByTalkDurationGreaterThan(duration);
+    	
+    	if (persons.isEmpty()) {
+            
+    		throw new PhoneCallNotFoundException("Users not found");
+       
+    	}
+    	
+    	return persons;
+   
     }
     
 }
