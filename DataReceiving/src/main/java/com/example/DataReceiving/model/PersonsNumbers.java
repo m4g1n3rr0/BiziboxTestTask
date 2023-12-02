@@ -1,8 +1,6 @@
 package com.example.DataReceiving.model;
 
 import lombok.Data;
-import org.springframework.*;
-
 import jakarta.persistence.*;
 
 

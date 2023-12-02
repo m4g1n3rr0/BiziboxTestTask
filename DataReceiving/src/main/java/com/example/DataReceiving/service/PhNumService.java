@@ -2,11 +2,13 @@ package com.example.DataReceiving.service;
 
 import java.util.List;
 
+import org.aspectj.weaver.ast.Call;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 
 import com.example.DataReceiving.exceptions.PhoneCallNotFoundException;
 import com.example.DataReceiving.exceptions.PhoneInfoAlreadyExists;
+import com.example.DataReceiving.model.Contact;
 import com.example.DataReceiving.model.PersonsNumbers;
 import com.example.DataReceiving.repo.CallRepo;
 
@@ -78,6 +80,14 @@ public class PhNumService {
     	
     	return persons;
    
+    }
+	
+	public void addCall(Call call) {
+        Call person = call.getPerson();
+
+        if (person != null && !person.isBlacklist()) {
+            callRepo.save(call);
+        }
     }
     
 }
