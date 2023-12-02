@@ -35,11 +35,12 @@ public class Controller {
 		
 	}
 	
-	@GetMapping
-	public ResponseEntity getUsers() {
+	@GetMapping("/user")
+	public ResponseEntity getOneUser(@RequestParam Long PhoneNumber) {
 	
 		try {
 			
+			phNum.getOne(PhoneNumber);
 			return ResponseEntity.ok("Server is working");
 			
 		} catch (Exception e) {
@@ -47,14 +48,15 @@ public class Controller {
 			return ResponseEntity.badRequest().body("Error was happened");
 			
 		}
-		
+	
 	}
 	
-	@GetMapping("/user")
-	public ResponseEntity getOneUser(@RequestParam Long PhoneNumber) {
+	@GetMapping
+	public ResponseEntity getUsers(@RequestParam Long PhoneNumber) {
 	
 		try {
 			
+			phNum.getMany(PhoneNumber);
 			return ResponseEntity.ok("Server is working");
 			
 		} catch (Exception e) {
